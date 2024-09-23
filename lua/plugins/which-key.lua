@@ -1,17 +1,17 @@
 return {
     "folke/which-key.nvim",
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
-    config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
+    event = "VimEnter",
+    config = function()
+        require("which-key").setup()
 
-      -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      }
+        require("which-key").add({
+            { "<leader>c", name = "[C]ode", mode = { "n", "x" } },
+            { "<leader>d", name = "[D]ocument" },
+            { "<leader>r", name = "[R]ename" },
+            { "<leader>s", name = "[S]earch" },
+            { "<leader>w", name = "[W]orkspace" },
+            { "<leader>t", group = "[T]oggle" },
+            { "<leader>h", name = "[H]arpoon" },
+        })
     end,
 }
