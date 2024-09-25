@@ -20,15 +20,22 @@ return {
 
     config = function()
         local telescope = require("telescope")
+        local themes = require("telescope.themes")
+
         telescope.load_extension("media_files")
         telescope.setup({
             extensions = {
-                ["ui-select"] = { require("telescope.themes").get_dropdown() },
+                ["ui-select"] = { themes.get_dropdown() },
             },
         })
 
-        pcall(require("telescope").load_extension, "fzf")
-        pcall(require("telescope").load_extension, "ui-select")
+        pcall(telescope.load_extension, "fzf")
+        pcall(telescope.load_extension, "ui-select")
+        pcall(telescope.load_extension, "undo")
+        pcall(telescope.load_extension, "advanced_git_search")
+        pcall(telescope.load_extension, "live_grep_args")
+        pcall(telescope.load_extension, "colors")
+        pcall(telescope.load_extension, "noice")
 
         local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
@@ -43,7 +50,7 @@ return {
         vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
         vim.keymap.set("n", "<leader>/", function()
-            builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+            builtin.current_buffer_fuzzy_find(themes.get_dropdown({
                 winblend = 10,
                 previewer = false,
             }))
