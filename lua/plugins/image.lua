@@ -5,8 +5,8 @@ return {
         dependencies = {
             {
                 "vhyrro/luarocks.nvim",
-                -- this plugin needs to run before anything else
                 priority = 1001,
+
                 opts = {
                     rocks = { "magick" },
                 },
