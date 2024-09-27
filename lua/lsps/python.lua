@@ -1,0 +1,5 @@
+return {
+    pyright = {},
+    black = {},
+    isort = {},
+}
