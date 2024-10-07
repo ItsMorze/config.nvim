@@ -36,6 +36,7 @@ return {
         pcall(telescope.load_extension, "live_grep_args")
         pcall(telescope.load_extension, "colors")
         pcall(telescope.load_extension, "noice")
+        pcall(telescope.load_extension, "lazygit")
 
         local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
