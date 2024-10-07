@@ -1,10 +1,4 @@
 local servers = {}
-vim.notify("Called with params:" .. (...))
-
--- -- skip if called from lazy.nvim (without require)
--- if not (...) then
---     return {}
--- end
 
 local current_folder = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":h")
 
