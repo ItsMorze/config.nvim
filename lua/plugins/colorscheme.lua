@@ -1,5 +1,6 @@
 return {
     "navarasu/onedark.nvim",
+    dependencies = { "norcalli/nvim-colorizer.lua" },
     lazy = false,
     priority = 1000,
 
@@ -13,5 +14,7 @@ return {
         onedark.load()
 
         vim.cmd.hi("Comment gui=none")
+
+        require("colorizer").setup()
     end,
 }
