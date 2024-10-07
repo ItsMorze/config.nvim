@@ -5,5 +5,7 @@ return {
         require("supermaven-nvim").setup({
             log_level = "warn",
         })
+
+        vim.cmd("SupermavenUseFree")
     end,
 }
