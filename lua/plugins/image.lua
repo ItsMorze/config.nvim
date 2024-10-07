@@ -2,6 +2,11 @@ return {
     "3rd/image.nvim",
     event = "VeryLazy",
     ft = "markdown",
+
+    -- for now enable only on macOS
+    -- FIXME: add support for Linux & Windows
+    enabled = vim.uv.os_uname().sysname == "Darwin",
+
     dependencies = {
         {
             "vhyrro/luarocks.nvim",
