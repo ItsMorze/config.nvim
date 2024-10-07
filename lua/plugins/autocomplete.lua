@@ -11,6 +11,21 @@ return {
                 return "make install_jsregexp"
             end)(),
         },
+        {
+            "folke/lazydev.nvim",
+            ft = "lua",
+            dependencies = {
+                { "Bilal2453/luvit-meta", lazy = true },
+            },
+
+            config = function()
+                require("lazydev").setup({
+                    library = {
+                        { path = "luvit-meta/library", words = { "vim%.uv" } },
+                    },
+                })
+            end,
+        },
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
@@ -55,6 +70,7 @@ return {
             }),
             sources = {
                 { name = "nvim_lsp" },
+                { name = "lazydev", group_index = 0 },
                 { name = "luasnip" },
                 { name = "path" },
             },
