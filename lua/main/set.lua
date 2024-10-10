@@ -11,10 +11,13 @@ vim.opt.cursorline = true
 vim.opt.list = true
 vim.opt.listchars = { tab = ">>", trail = "·", nbsp = "+", eol = "↵" }
 
+vim.opt.diffopt:append({ "followwrap" })
+vim.opt.fillchars = { diff = "╱" }
+
 vim.opt.hlsearch = true
 vim.opt.inccommand = "split"
 
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "auto:2"
 
 vim.opt.wrap = true
 vim.opt.breakindent = true
@@ -31,6 +34,9 @@ vim.opt.splitbelow = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
 
 vim.opt.mouse = "a"
 

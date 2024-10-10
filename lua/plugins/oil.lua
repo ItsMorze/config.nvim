@@ -15,7 +15,12 @@ return {
             },
             win_options = {
                 wrap = true,
-                winblend = 0,
+            },
+
+            view_options = {
+                is_hidden_file = function(name, _)
+                    return name == ".." or name == ".git" or name == ".DS_Store"
+                end,
             },
 
             keymaps = {
@@ -26,6 +31,6 @@ return {
             },
         })
 
-        vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Go to parent directory" })
+        vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Go to parent directory" })
     end,
 }

@@ -26,6 +26,7 @@ return {
                 })
             end,
         },
+        "onsails/lspkind-nvim",
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-path",
@@ -35,6 +36,7 @@ return {
 
     config = function()
         local cmp = require("cmp")
+        local lspkind = require("lspkind")
         local luasnip = require("luasnip")
         luasnip.config.setup({})
 
@@ -68,10 +70,22 @@ return {
                     end
                 end, { "i", "s" }),
             }),
+
+            formatting = {
+                format = lspkind.cmp_format({
+                    mode = "symbol",
+                    maxwidth = 50,
+                    ellipsis_char = "...",
+                    show_labelDetails = true,
+                    symbol_map = { Supermaven = "" },
+                }),
+            },
+
             sources = {
                 { name = "nvim_lsp" },
                 { name = "lazydev", group_index = 0 },
                 { name = "luasnip" },
+                { name = "supermaven" },
                 { name = "path" },
             },
         })
