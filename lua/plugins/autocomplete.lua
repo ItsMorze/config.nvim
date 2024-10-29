@@ -1,6 +1,14 @@
 return {
     {
+        "supermaven-inc/supermaven-nvim",
+        event = { "InsertEnter", "CmdlineEnter" },
+
+        opts = {
+            log_level = "warn",
+            disable_inline_completion = true,
+            disable_keymaps = true,
         },
+    },
     {
         "hrsh7th/nvim-cmp",
         event = { "InsertEnter", "CmdlineEnter" },
@@ -35,7 +43,14 @@ return {
 
                 completion = { completeopt = "menu,menuone,noinsert" },
 
+                experimental = {
+                    ghost_text = true,
+                },
 
+                window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                },
 
                 mapping = cmp.mapping.preset.insert({
                     ["<C-n>"] = cmp.mapping.select_next_item(),
@@ -54,6 +69,11 @@ return {
                     format = function(entry, item)
                         local color_item = require("nvim-highlight-colors").format(entry, { kind = item.kind })
                         item = require("lspkind").cmp_format({
+                            mode = "symbol",
+                            maxwidth = 50,
+                            ellipsis_char = "...",
+                            show_labelDetails = true,
+                            symbol_map = { Supermaven = "" },
                         })(entry, item)
 
                         if color_item.abbr_hl_group then
@@ -70,6 +90,7 @@ return {
                     { name = "luasnip" },
                     { name = "buffer" },
                     { name = "path" },
+                    { name = "supermaven" },
                 },
             })
 
