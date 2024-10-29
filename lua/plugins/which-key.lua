@@ -12,7 +12,6 @@ return {
             { "<leader>r", group = "[R] Session" },
             { "<leader>t", group = "[T]oggle" },
             { "<leader>g", group = "[G]it" },
-            { "<leader>h", group = "[H]arpoon" },
         })
     end,
 }
