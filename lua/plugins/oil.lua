@@ -11,16 +11,13 @@ return {
         delete_to_trash = true,
         skip_confirm_for_simple_edits = true,
 
-            float = {
-                padding = 2,
-                max_width = 90,
-                max_height = 0,
-            },
-            win_options = {
-                wrap = true,
-                winblend = 0,
-            },
+        win_options = {
+            wrap = true,
+        },
 
+        view_options = {
+            is_hidden_file = function(name, _) return name == ".." or name == ".git" or name == ".DS_Store" end,
+        },
 
         keymaps = {
             ["<C-h>"] = false,
