@@ -3,7 +3,14 @@ return {
         "nvim-treesitter/playground",
         cmd = { "TSPlaygroundToggle", "TSHighlightCapturesUnderCursor" },
     },
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        event = "VeryLazy",
 
+        opts = {
+            max_lines = 1,
+        },
+    },
     {
         "nvim-treesitter/nvim-treesitter",
         event = "BufReadPre",
