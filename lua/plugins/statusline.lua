@@ -3,13 +3,17 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
         "tpope/vim-fugitive",
+        "stevearc/oil.nvim",
     },
 
     config = function()
+        local mode = {
+            "mode",
+            fmt = function(str) return " " .. str end,
+        }
+
         local filename_section = {
-            function()
-                return require("oil").get_current_dir() or ""
-            end,
+            function() return require("oil").get_current_dir() or "" end,
 
             {
                 "filename",
@@ -30,9 +34,15 @@ return {
 
         require("lualine").setup({
             options = {
+                icons_enabled = true,
                 theme = "onedark",
+                section_separators = { left = "", right = "" },
+                component_separators = { left = "", right = "" },
+                disabled_filetypes = { "alpha" },
+                always_divide_middle = true,
             },
             sections = {
+                lualine_a = { mode },
                 lualine_c = filename_section,
                 lualine_x = oil_section,
             },
@@ -41,7 +51,7 @@ return {
                 lualine_x = oil_section,
             },
 
-            extensions = { "lazy", "mason", "fugitive" }, -- Make sure 'fugitive' is listed here
+            extensions = { "lazy", "mason", "fugitive", "man" },
         })
     end,
 }
