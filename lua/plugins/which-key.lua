@@ -1,6 +1,7 @@
 return {
     "folke/which-key.nvim",
     event = "VimEnter",
+
     config = function()
         require("which-key").setup()
 
@@ -10,7 +11,7 @@ return {
             { "<leader>s", group = "[S]earch" },
             { "<leader>w", group = "[W]orkspace" },
             { "<leader>r", group = "[R] Session" },
-            { "<leader>t", group = "[T]oggle" },
+            { "<leader>t", group = "[T]ab" },
             { "<leader>g", group = "[G]it" },
         })
     end,
