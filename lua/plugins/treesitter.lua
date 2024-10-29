@@ -1,31 +1,46 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
+    {
         "nvim-treesitter/playground",
+        cmd = { "TSPlaygroundToggle", "TSHighlightCapturesUnderCursor" },
     },
-    event = "BufReadPre",
-    build = ":TSUpdate",
 
-    config = function()
-        local configs = require("nvim-treesitter.configs")
+    {
+        "nvim-treesitter/nvim-treesitter",
+        event = "BufReadPre",
+        build = ":TSUpdate",
 
-        configs.setup({
-            ensure_installed = {
-                "c",
-                "cpp",
-                "lua",
-                "json",
-                "vim",
-                "vimdoc",
-                "bash",
-                "java",
-                "python",
-                "rust",
-                "markdown",
-            },
-            auto_install = true,
-            highlight = { enable = true },
-            indent = { enable = true },
-        })
-    end,
+        config = function()
+            local configs = require("nvim-treesitter.configs")
+
+            configs.setup({
+                ensure_installed = {
+                    "bash",
+                    "c",
+                    "cpp",
+                    "diff",
+                    "git_config",
+                    "gitcommit",
+                    "go",
+                    "java",
+                    "json",
+                    "latex",
+                    "lua",
+                    "markdown",
+                    "markdown_inline",
+                    "nix",
+                    "python",
+                    "rust",
+                    "toml",
+                    "tmux",
+                    "vim",
+                    "vimdoc",
+                    "yaml",
+                    "zig",
+                },
+                auto_install = true,
+                highlight = { enable = true },
+                indent = { enable = true },
+            })
+        end,
+    },
 }

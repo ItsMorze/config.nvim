@@ -1,12 +1,15 @@
 return {
     "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy = false,
+    keys = {
+        { "-", "<CMD>Oil<CR>", desc = "Go to parent directory" },
+    },
 
-    config = function()
-        require("oil").setup({
-            defualt_file_explorer = true,
-            delete_to_trash = true,
-            skip_confirm_for_simple_edits = true,
+    opts = {
+        defualt_file_explorer = true,
+        delete_to_trash = true,
+        skip_confirm_for_simple_edits = true,
 
             float = {
                 padding = 2,
@@ -18,14 +21,12 @@ return {
                 winblend = 0,
             },
 
-            keymaps = {
-                ["<C-h>"] = false,
-                ["<C-l>"] = false,
-                ["<C-c>"] = false,
-                ["q"] = "actions.close",
-            },
-        })
 
-        vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Go to parent directory" })
-    end,
+        keymaps = {
+            ["<C-h>"] = false,
+            ["<C-l>"] = false,
+            ["<C-c>"] = false,
+            ["q"] = "actions.close",
+        },
+    },
 }
