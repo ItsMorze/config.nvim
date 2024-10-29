@@ -1,3 +1,3 @@
-require("main.set")
+require("main.options")
 require("main.lazy")
-require("main.remap")
+require("main.keymaps")
