@@ -30,8 +30,8 @@ return {
             dashboard.button("d", "  Open Directory", ":e .<CR>"),
             dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
             dashboard.button("c", "  Config", ":e " .. vim.fn.stdpath("config") .. "<CR>"),
+            dashboard.button("g", "  Neogit", ":Neogit<CR>"),
             dashboard.button("l", "󰒲  Lazy", ":Lazy<CR>"),
-            dashboard.button("g", "  LazyGit", ":LazyGit<CR>"),
             dashboard.button("m", "󰢛  Mason", ":Mason<CR>"),
             dashboard.button("q", "  Quit", ":qa<CR>"),
         }

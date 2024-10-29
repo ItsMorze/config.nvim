@@ -31,7 +31,6 @@ return {
         pcall(telescope.load_extension, "advanced_git_search")
         pcall(telescope.load_extension, "live_grep_args")
         pcall(telescope.load_extension, "colors")
-        pcall(telescope.load_extension, "lazygit")
         -- pcall(telescope.load_extension, "noice")
 
         local builtin = require("telescope.builtin")
