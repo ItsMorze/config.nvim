@@ -11,10 +11,15 @@ vim.opt.cursorline = true
 vim.opt.list = true
 vim.opt.listchars = { tab = ">>", trail = "·", nbsp = "+", eol = "↵" }
 
+vim.opt.diffopt:append({ "followwrap" })
+vim.opt.fillchars = { diff = "╱" }
+
 vim.opt.hlsearch = true
 vim.opt.inccommand = "split"
 
-vim.opt.signcolumn = "yes"
+vim.opt.laststatus = 3
+
+vim.opt.signcolumn = "auto:1-2"
 
 vim.opt.wrap = true
 vim.opt.breakindent = true
@@ -36,8 +41,7 @@ vim.opt.mouse = "a"
 
 vim.opt.undofile = true
 
-local colorterm = os.getenv("COLORTERM")
-vim.opt.termguicolors = (colorterm == "truecolor" or colorterm == "24bit")
+vim.opt.termguicolors = true
 
 vim.opt.isfname:append("@-@")
 
