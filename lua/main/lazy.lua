@@ -14,7 +14,19 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", {
+---@overload fun(folder: string)
+local function import(folder)
+    local specs = { { import = folder } }
+
+    -- iterate over all inner folders
+    for name, type in vim.fs.dir(vim.fn.stdpath("config") .. "/lua/" .. folder) do
+        if type == "directory" then table.insert(specs, { import = folder .. "." .. name }) end
+    end
+
+    return specs
+end
+
+require("lazy").setup(import("plugins"), {
     install = {
         colorscheme = { "onedark" },
     },
