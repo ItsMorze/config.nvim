@@ -24,6 +24,8 @@ vim.opt.signcolumn = "auto:1-2"
 vim.opt.wrap = true
 vim.opt.breakindent = true
 
+vim.opt.spell = true
+
 vim.opt.scrolloff = 8
 
 vim.opt.tabstop = 4
