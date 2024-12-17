@@ -15,7 +15,7 @@ return {
         vim.api.nvim_set_hl(0, "NonText", { link = "WinSeparator" })
         vim.api.nvim_set_hl(0, "LspInlayHint", { link = "FloatBorder" })
 
-	-- change highlight groups for neogit
+        -- change highlight groups for neogit
         vim.api.nvim_set_hl(0, "Error", { link = "TSRainbowRed" })
         vim.api.nvim_set_hl(0, "SpecialChar", { link = "TSRainbowOrange" })
         vim.api.nvim_set_hl(0, "PreProc", { link = "TSRainbowYellow" })

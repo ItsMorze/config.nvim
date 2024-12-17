@@ -5,7 +5,7 @@ vim.keymap.set("n", "<right>", function() vim.notify("Use l to move!!") end)
 vim.keymap.set("n", "<up>", function() vim.notify("Use k to move!!") end)
 vim.keymap.set("n", "<down>", function() vim.notify("Use j to move!!") end)
 
-vim.keymap.set("n", "<C-s>", function() vim.cmd("w") end, desc("[S]ave Buffer"))
+vim.keymap.set({ "n", "i" }, "<C-s>", function() vim.cmd("w") end, desc("[S]ave Buffer"))
 
 vim.keymap.set({ "n", "i", "v", "x", "o" }, "<C-q>", function() vim.cmd("q") end, desc("[Q]uit Buffer"))
 

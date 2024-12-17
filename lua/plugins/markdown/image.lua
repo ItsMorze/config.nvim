@@ -1,6 +1,6 @@
 return {
     "3rd/image.nvim",
-    ft = "markdown",
+    lazy = true, -- should only be loaded when manually calling `:Lazy load image.nvim`
 
     -- for now enable only on macOS
     -- FIXME: add support for Linux & Windows

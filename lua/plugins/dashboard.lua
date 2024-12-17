@@ -26,7 +26,7 @@ return {
         }
 
         dashboard.section.buttons.val = {
-            dashboard.button("r", "  Restore Session", ":lua require('persistence').load({last = true})<CR>"),
+            dashboard.button("r", "  Restore Session", ":lua require('persistence').load()<CR>"),
             dashboard.button("d", "  Open Directory", ":e .<CR>"),
             dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
             dashboard.button("c", "  Config", ":e " .. vim.fn.stdpath("config") .. "<CR>"),

@@ -47,5 +47,12 @@ vim.opt.termguicolors = true
 
 vim.opt.isfname:append("@-@")
 
+vim.filetype.add({
+    extension = {
+        kbd = "lisp",
+        plist = "xml",
+    },
+})
+
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300

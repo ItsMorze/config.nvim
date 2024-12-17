@@ -8,9 +8,17 @@ return {
     },
 
     config = function()
+        local function is_zoomed_in()
+            if vim.t["simple-zoom"] == nil then
+                return ""
+            elseif vim.t["simple-zoom"] == "zoom" then
+                return " 󰍉 "
+            end
+        end
+
         local mode = {
             "mode",
-            fmt = function(str) return " " .. str end,
+            fmt = function(str) return " " .. str .. is_zoomed_in() end,
         }
 
         local filename_section = {
@@ -45,7 +53,16 @@ return {
             sections = {
                 lualine_a = { mode },
                 lualine_c = filename_section,
-                lualine_x = oil_section,
+                lualine_x = {
+                    oil_section,
+                    {
+                        ---@diagnostic disable-next-line: undefined-field
+                        require("noice").api.status.mode.get,
+                        ---@diagnostic disable-next-line: undefined-field
+                        cond = require("noice").api.status.mode.has,
+                        color = { fg = "#ff9e64" },
+                    },
+                },
             },
             inactive_sections = {
                 lualine_c = filename_section,

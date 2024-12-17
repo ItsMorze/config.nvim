@@ -23,10 +23,13 @@ return {
                 ensure_installed = {
                     "bash",
                     "c",
+                    "commonlisp",
                     "cpp",
                     "diff",
                     "git_config",
+                    "git_rebase",
                     "gitcommit",
+                    "gitignore",
                     "go",
                     "java",
                     "json",
